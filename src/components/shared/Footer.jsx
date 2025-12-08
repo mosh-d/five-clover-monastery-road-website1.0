@@ -181,8 +181,8 @@ export default function Footer() {
                 <a href="https://fivecloverhotelabijo.com/" target="_blank" className="text-2xl">
                   Abijo, GRA
                 </a>
-                <a href="https://fivecloverilupeju.fivecloverhotels.com/" target="_blank" className="text-2xl">
-                  Ilupeju
+                <a href="https://fiveclovermonastery.fivecloverhotels.com/" target="_blank" className="text-2xl">
+                  Monastery Road
                 </a>
               </div>
             </div>

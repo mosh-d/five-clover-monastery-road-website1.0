@@ -20,7 +20,7 @@ export default function ContactMainSection() {
         <h1 className="text-6xl font-bold">Get In Touch</h1>
         <p className="text-2xl font-semibold">
           Have any questions or need assistance? The team at Five Clover,
-          Ilupeju is always ready to ensure your stay is flawless. Don’t hesitate
+          Monastery Road is always ready to ensure your stay is flawless. Don't hesitate
           to reach out—we’re here to help with anything you need.
         </p>
       </div>
@@ -45,7 +45,7 @@ export default function ContactMainSection() {
               href=""
               className="border-b border-[color:var(--text-color)]/30 text-xl"
             >
-              +234 911 563 8526
+              (+234) 907 510 5702
             </a>
           </div>
           <div
@@ -57,7 +57,7 @@ export default function ContactMainSection() {
               href=""
               className="border-b border-[color:var(--text-color)]/30 text-xl"
             >
-              info@fivecloverhotels.com
+              info@fivecloverhotelmonastery.com
             </a>
           </div>
           <div

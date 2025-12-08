@@ -42,7 +42,7 @@ const SUPERMARKETS = [
     distance: "8 km",
   },
   {
-    title: "Justrite Supermarket - Ilupeju",
+    title: "Local Landmark - Coming Soon",
     distance: "1 km",
   },
   {
@@ -69,7 +69,7 @@ const TRANSPORTATION = [
     distance: "2 km",
   },
   {
-    title: "Ilupeju Bus Terminal",
+    title: "Local Attraction - Coming Soon",
     distance: "1 km",
   },
 ];

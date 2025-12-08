@@ -2,10 +2,10 @@ export const generateHotelSchema = (hotelData = {}) => {
   const defaultData = {
     "@context": "https://schema.org",
     "@type": "Hotel",
-    "name": "Five Clover Hotel Ilupeju",
-    "description": "Luxury hotel accommodation in the heart of Ilupeju, Lagos. Experience comfort and excellent service at Five Clover Hotel.",
-    "url": "https://fivecloverilupeju.fivecloverhotels.com",
-    "logo": "https://fivecloverilupeju.fivecloverhotels.com/five%20clover%20logo.webp",
+    "name": "Five Clover Hotel Monastery Road",
+    "description": "Luxury hotel accommodation at Monastery Road, Sangotedo, Lagos. Experience comfort and excellent service at Five Clover Hotel.",
+    "url": "https://fiveclovermonastery.fivecloverhotels.com",
+    "logo": "https://fiveclovermonastery.fivecloverhotels.com/five%20clover%20logo.webp",
     "priceRange": "$$",
     "starRating": {
       "@type": "Rating",
@@ -14,15 +14,15 @@ export const generateHotelSchema = (hotelData = {}) => {
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1-5 Ogunlana Drive, Ilupeju",
+      "streetAddress": "10, Monastery Road, by Novare Mall/ShopRite, Sangotedo, Lagos",
       "addressLocality": "Lagos",
       "postalCode": "100001",
       "addressCountry": "NG"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "6.5535",
-      "longitude": "3.3665"
+      "latitude": "6.471022",
+      "longitude": "3.635581"
     },
     "telephone": "+2348123456789",
     "email": "info@fivecloverhotel.com",
@@ -59,13 +59,13 @@ export const generateBreadcrumbSchema = (items = []) => {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://fivecloverilupeju.fivecloverhotels.com"
+      "item": "https://fiveclovermonastery.fivecloverhotels.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Rooms",
-      "item": "https://fivecloverilupeju.fivecloverhotels.com/rooms"
+      "item": "https://fiveclovermonastery.fivecloverhotels.com/rooms"
     }
   ];
 

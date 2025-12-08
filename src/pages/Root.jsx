@@ -197,11 +197,11 @@ export default function RootLayout() {
 
   // Get current page metadata
   const getPageMetadata = () => {
-    const baseUrl = "https://fivecloverilupeju.fivecloverhotels.com";
+    const baseUrl = "https://fiveclovermonastery.fivecloverhotels.com";
     const defaultMetadata = {
-      title: "Five Clover Hotel Ilupeju | Luxury Accommodation in Lagos",
+      title: "Five Clover Hotel Monastery Road | Luxury Accommodation in Lagos",
       description:
-        "Experience luxury and comfort at Five Clover Hotel Ilupeju. Book your stay at our premium hotel in the heart of Lagos, Nigeria.",
+        "Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.",
       url: `${baseUrl}${location.pathname}`,
       type: "website",
       image: "/five clover logo.webp",
@@ -209,34 +209,34 @@ export default function RootLayout() {
 
     const pageMetadata = {
       "/": {
-        title: "Five Clover Hotel Ilupeju | Luxury Accommodation in Lagos",
+        title: "Five Clover Hotel Monastery Road | Luxury Accommodation in Lagos",
         description:
-          "Experience luxury and comfort at Five Clover Hotel Ilupeju. Book your stay at our premium hotel in the heart of Lagos, Nigeria.",
+          "Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.",
       },
       "/about": {
-        title: "About Us | Five Clover Hotel Ilupeju",
+        title: "About Us | Five Clover Hotel Monastery Road",
         description:
-          "Discover the story behind Five Clover Hotel Ilupeju and our commitment to providing exceptional hospitality in Lagos.",
+          "Discover the story behind Five Clover Hotel Monastery Road and our commitment to providing exceptional hospitality in Lagos.",
       },
       "/rooms": {
-        title: "Our Rooms | Five Clover Hotel Ilupeju",
+        title: "Our Rooms | Five Clover Hotel Monastery Road",
         description:
-          "Explore our luxurious rooms and suites at Five Clover Hotel Ilupeju, designed for your comfort and relaxation.",
+          "Explore our luxurious rooms and suites at Five Clover Hotel Monastery Road, designed for your comfort and relaxation.",
       },
       "/gallery": {
-        title: "Photo Gallery | Five Clover Hotel Ilupeju",
+        title: "Photo Gallery | Five Clover Hotel Monastery Road",
         description:
-          "View our photo gallery showcasing the luxurious facilities and comfortable accommodations at Five Clover Hotel Ilupeju.",
+          "View our photo gallery showcasing the luxurious facilities and comfortable accommodations at Five Clover Hotel Monastery Road.",
       },
       "/contact": {
-        title: "Contact Us | Five Clover Hotel Ilupeju",
+        title: "Contact Us | Five Clover Hotel Monastery Road",
         description:
-          "Get in touch with Five Clover Hotel Ilupeju. Our friendly staff is ready to assist with your booking and inquiries.",
+          "Get in touch with Five Clover Hotel Monastery Road. Our friendly staff is ready to assist with your booking and inquiries.",
       },
       "/booking": {
-        title: "Book Your Stay | Five Clover Hotel Ilupeju",
+        title: "Book Your Stay | Five Clover Hotel Monastery Road",
         description:
-          "Book your luxurious stay at Five Clover Hotel Ilupeju. Best rates guaranteed for our premium accommodations in Lagos.",
+          "Book your luxurious stay at Five Clover Hotel Monastery Road. Best rates guaranteed for our premium accommodations in Lagos.",
       },
     };
 
@@ -260,24 +260,23 @@ export default function RootLayout() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Hotel",
-            name: "Five Clover Hotel Ilupeju",
+            name: "Five Clover Hotel Monastery Road",
             description:
-              "Experience luxury and comfort at Five Clover Hotel Ilupeju. Book your stay at our premium hotel in the heart of Lagos, Nigeria.",
-            image:
-              "https://fivecloverilupeju.fivecloverhotels.com/five%20clover%20logo.webp",
-            url: "https://fivecloverilupeju.fivecloverhotels.com",
+              "Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.",
+            image: "https://fiveclovermonastery.fivecloverhotels.com/five%20clover%20logo.webp",
+            url: "https://fiveclovermonastery.fivecloverhotels.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "5-9 Ilupeju Bypass",
-              addressLocality: "Ilupeju",
+              streetAddress: "10, Monastery Road, by Novare Mall/ShopRite, Sangotedo, Lagos",
+              addressLocality: "Monastery Road",
               addressRegion: "Lagos",
               postalCode: "100211",
               addressCountry: "NG",
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 6.55,
-              longitude: 3.35,
+              latitude: 6.471022,
+              longitude: 3.635581,
             },
             priceRange: "₦30,000 - ₦150,000",
             starRating: {

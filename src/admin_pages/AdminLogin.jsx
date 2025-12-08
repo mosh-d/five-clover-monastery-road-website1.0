@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
             <div className="w-full max-w-md space-y-8">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-gray-900">
-                        Five Clover Ilupeju
+                        Five Clover Monastery Road
                     </h1>
                     <h2 className="mt-2 text-3xl font-medium text-gray-600">
                         Admin Panel

@@ -29,69 +29,41 @@ import { LuBath } from "react-icons/lu";
 import { TbAirConditioning, TbFridge } from "react-icons/tb";
 
 //Room images
-import standardRoomImage from "../../assets/room-images/standard/standard.jpg";
-import standardRoomImage2 from "../../assets/room-images/standard/standard-2.jpg";
-import standardRoomImage3 from "../../assets/room-images/standard/standard-3.jpg";
-import standardRoomImage4 from "../../assets/room-images/standard/standard-4.jpg";
-import superiorRoomImage from "../../assets/room-images/superior/superior.jpg";
-import superiorRoomImage2 from "../../assets/room-images/superior/superior-2.jpg";
-import superiorRoomImage3 from "../../assets/room-images/superior/superior-3.jpg";
-import superiorRoomImage4 from "../../assets/room-images/superior/superior-4.jpg";
-import executiveRoomImage from "../../assets/room-images/executive/executive.jpg";
-import executiveRoomImage2 from "../../assets/room-images/executive/executive-2.jpg";
-import executiveRoomImage3 from "../../assets/room-images/executive/executive-3.jpg";
-import executiveRoomImage4 from "../../assets/room-images/executive/executive-4.jpg";
-import executiveDeluxeRoomImage from "../../assets/room-images/executive-deluxe/executive-deluxe.jpg";
-import executiveDeluxeRoomImage2 from "../../assets/room-images/executive-deluxe/executive-deluxe-2.jpg";
-import executiveDeluxeRoomImage3 from "../../assets/room-images/executive-deluxe/executive-deluxe-3.jpg";
-import executiveDeluxeRoomImage4 from "../../assets/room-images/executive-deluxe/executive-deluxe-4.jpg";
+import deluxeRoomImage from "../../assets/room-images/deluxe/deluxe.jpg";
+import deluxeRoomImage2 from "../../assets/room-images/deluxe/deluxe-2.jpg";
+import deluxeRoomImage3 from "../../assets/room-images/deluxe/deluxe-3.jpg";
+import deluxeRoomImage4 from "../../assets/room-images/deluxe/deluxe-4.jpg";
+import diplomaticRoomImage from "../../assets/room-images/diplomatic/diplomatic.jpg";
+import diplomaticRoomImage2 from "../../assets/room-images/diplomatic/diplomatic-2.jpg";
+import diplomaticRoomImage3 from "../../assets/room-images/diplomatic/diplomatic-3.jpg";
+import diplomaticRoomImage4 from "../../assets/room-images/diplomatic/diplomatic-4.jpg";
 
-//standard room images
-const standardRoomImages = [
-  standardRoomImage,
-  standardRoomImage2,
-  standardRoomImage3,
-  standardRoomImage4,
+//deluxe room images
+const deluxeRoomImages = [
+  deluxeRoomImage,
+  deluxeRoomImage2,
+  deluxeRoomImage3,
+  deluxeRoomImage4,
 ];
 
-// superior room images
-const superiorRoomImages = [
-  superiorRoomImage,
-  superiorRoomImage2,
-  superiorRoomImage3,
-  superiorRoomImage4,
-];
-
-// executive room images
-const executiveRoomImages = [
-  executiveRoomImage,
-  executiveRoomImage2,
-  executiveRoomImage3,
-  executiveRoomImage4,
-];
-
-// executive deluxe room images
-const executiveDeluxeRoomImages = [
-  executiveDeluxeRoomImage,
-  executiveDeluxeRoomImage2,
-  executiveDeluxeRoomImage3,
-  executiveDeluxeRoomImage4,
+// diplomatic room images
+const diplomaticRoomImages = [
+  diplomaticRoomImage,
+  diplomaticRoomImage2,
+  diplomaticRoomImage3,
+  diplomaticRoomImage4,
 ];
 
 // Room type to image mapping
 const roomTypeImages = {
-  Standard: standardRoomImage,
-  Superior: superiorRoomImage,
-  Executive: executiveRoomImage,
-  "Executive Deluxe": executiveDeluxeRoomImage,
+  Deluxe: deluxeRoomImage,
+  Diplomatic: diplomaticRoomImage,
 };
 
 // Room type to gallery images mapping
 const roomGalleryImages = {
-  Standard: standardRoomImages,
-  Superior: superiorRoomImages,
-  Executive: executiveRoomImages,
-  "Executive Deluxe": executiveDeluxeRoomImages,
+  Deluxe: deluxeRoomImages,
+  Diplomatic: diplomaticRoomImages,
 };
 
 const useSharedContext = () => {
@@ -170,7 +142,7 @@ export default function AvailableRoomsSection() {
         ? API_BASE_URL.slice(0, -1)
         : API_BASE_URL;
       const response = await axios.post(`${baseUrl}/api/rooms/details`, {
-        branch_id: 10,
+        branch_id: 1,
       });
 
       console.log("API Response:", response.data);
