@@ -5,95 +5,83 @@ import { TbBeach } from "react-icons/tb";
 
 //images
 import topAttractions from "../../assets/hotel-surroundings/top-attractions.webp";
-import supermarketsAndStores from "../../assets/hotel-surroundings/supermarkets-and-stores.webp"
-import transportationOptions from "../../assets/hotel-surroundings/transportation-options.webp"
-import beaches from "../../assets/hotel-surroundings/beaches.webp"
+import supermarketsAndStores from "../../assets/hotel-surroundings/supermarkets-and-stores.webp";
+import transportationOptions from "../../assets/hotel-surroundings/transportation-options.webp";
+import beaches from "../../assets/hotel-surroundings/beaches.webp";
 
 const TOP_ATTRACTIONS = [
   {
-    title: "Dessie Kiddiez Centre",
-    distance: "300 m",
+    title: "Giwa Gardens Water Park",
+    distance: "1 km",
   },
   {
-    title: "Dr. Beko Ransome-Kuti Park",
-    distance: "700 m",
+    title: "Mater Ecclesiae Monastery",
+    distance: "500 m",
   },
   {
-    title: "Oshodi Heritage Garden",
-    distance: "850 m",
+    title: "Lufasi Nature Park",
+    distance: "3 km",
   },
   {
-    title: "Obanikoro Garden",
-    distance: "1.3 km",
+    title: "Lakowe Lakes Golf & Country Estate",
+    distance: "12 km",
   },
   {
-    title: "Kalakuta Museum",
-    distance: "5 km",
+    title: "Skymall Cinema",
+    distance: "2 km",
   },
 ];
 
 const SUPERMARKETS = [
   {
-    title: "Spar - Opebi",
-    distance: "3 km",
+    title: "Novare Mall (Shoprite)",
+    distance: "800 m",
   },
   {
-    title: "Shoprite - The Palms Lekki",
-    distance: "8 km",
+    title: "Blenco Supermarket",
+    distance: "2 km",
   },
   {
-    title: "Local Landmark - Coming Soon",
-    distance: "1 km",
+    title: "Sky Mall",
+    distance: "2 km",
   },
   {
-    title: "Ebeano Supermarket - Victoria Island",
-    distance: "15 km",
-  },
-  {
-    title: "Palmgroove Market",
-    distance: "5 km",
+    title: "Ebeano Supermarket (Chevron)",
+    distance: "10 km",
   },
 ];
 
 const TRANSPORTATION = [
   {
     title: "Murtala Muhammed Airport (LOS)",
-    distance: "12 km",
+    distance: "45 km",
   },
   {
-    title: "Oshodi Transport Interchange",
-    distance: "6 km",
+    title: "GIG Motors (Ajah Terminal)",
+    distance: "5 km",
   },
   {
-    title: "BRT Bus Stops - Ikorodu Rd",
-    distance: "2 km",
-  },
-  {
-    title: "Local Attraction - Coming Soon",
-    distance: "1 km",
+    title: "Peace Mass Transit (Ajah)",
+    distance: "5 km",
   },
 ];
 
 const BEACHES = [
   {
-    title: "Elegushi Private Beach",
-    distance: "15 km",
-  },
-  {
-    title: "Tarkwa Bay Beach",
-    distance: "22 km",
-  },
-  {
-    title: "Lekki Leisure Lake",
-    distance: "25 km",
+    title: "Santa Cruz Beach",
+    distance: "5 km",
   },
   {
     title: "Atican Beach",
-    distance: "28 km",
+    distance: "6 km",
+  },
+  {
+    title: "Barracuda Beach",
+    distance: "6 km",
   },
   {
     title: "Eleko Beach",
-    distance: "32 km",
+    distance: "15 km",
   },
 ];
 
@@ -113,7 +101,7 @@ export default function HotelSurroundingsSection() {
             className="flex flex-col gap-[2rem] max-lg:w-full w-[47%] text-[color:var(--white)] border-[1px] border-[color:var(--light-gray)]/10 p-[4rem] bg-cover bg-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, hsla(38, 50%, 10%, .8), hsla(38, 50%, 10%, .8)), url(${topAttractions})`,
-              backgroundBlendMode: 'multiply'
+              backgroundBlendMode: "multiply",
             }}
           >
             <div
@@ -159,7 +147,7 @@ export default function HotelSurroundingsSection() {
             className="flex flex-col gap-[2rem] max-lg:w-full w-[47%] text-[color:var(--white)] border-[1px] border-[color:var(--light-gray)]/10 p-[4rem] bg-cover bg-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, hsla(38, 50%, 10%, .8), hsla(38, 50%, 10%, .8)), url(${supermarketsAndStores})`,
-              backgroundBlendMode: 'multiply'
+              backgroundBlendMode: "multiply",
             }}
           >
             <div
@@ -205,7 +193,7 @@ export default function HotelSurroundingsSection() {
             className="flex flex-col gap-[2rem] max-lg:w-full w-[47%] text-[color:var(--white)] border-[1px] border-[color:var(--light-gray)]/10 p-[4rem] bg-cover bg-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, hsla(38, 50%, 10%, .8), hsla(38, 50%, 10%, .8)), url(${transportationOptions})`,
-              backgroundBlendMode: 'multiply'
+              backgroundBlendMode: "multiply",
             }}
           >
             <div
@@ -252,7 +240,7 @@ export default function HotelSurroundingsSection() {
             className="flex flex-col gap-[2rem] max-lg:w-full w-[47%] text-[color:var(--white)] border-[1px] border-[color:var(--light-gray)]/10 p-[4rem] bg-cover bg-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, hsla(38, 50%, 10%, .8), hsla(38, 50%, 10%, .8)), url(${beaches})`,
-              backgroundBlendMode: 'multiply'
+              backgroundBlendMode: "multiply",
             }}
           >
             <div
