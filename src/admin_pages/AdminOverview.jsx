@@ -7,14 +7,12 @@ import { IoRefresh } from "react-icons/io5";
 const API_BASE_URL = 'https://five-clover-shared-backend.onrender.com';
 
 const ROOM_TYPE_MAP = {
-  superior: 36,
-  deluxe: 37,
-  standard: 34,
-  executive: 35
+  deluxe: 1,
+  diplomatic: 2
 };
 
 export default function AdminOverviewPage() {
-  const [roomType, setRoomType] = useState("superior");
+  const [roomType, setRoomType] = useState("deluxe");
   const [roomDetails, setRoomDetails] = useState({
     maxCapacity: 0,
     totalAvailableRooms: 0,
@@ -133,15 +131,6 @@ export default function AdminOverviewPage() {
           </div>
         </div>
         <menu className="flex gap-[4rem] text-xl text-[color:var(--emphasis)]">
-          {roomType === "superior" ? (
-            <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
-              SUPERIOR
-            </li>
-          ) : (
-            <li className="border-b-[1px] border-[color:var(--emphasis)] cursor-pointer" onClick={() => setRoomType("superior")}>
-              SUPERIOR
-            </li>
-          )}
           {roomType === "deluxe" ? (
             <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
               DELUXE
@@ -151,22 +140,13 @@ export default function AdminOverviewPage() {
               DELUXE
             </li>
           )}
-          {roomType === "standard" ? (
+          {roomType === "diplomatic" ? (
             <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
-              STANDARD
+              DIPLOMATIC
             </li>
           ) : (
-            <li className="border-b-[1px] border-[color:var(--emphasis)] cursor-pointer" onClick={() => setRoomType("standard")}>
-              STANDARD
-            </li>
-          )}
-          {roomType === "executive" ? (
-            <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
-              EXECUTIVE
-            </li>
-          ) : (
-            <li className="border-b-[1px] border-[color:var(--emphasis)] cursor-pointer" onClick={() => setRoomType("executive")}>
-              EXECUTIVE
+            <li className="border-b-[1px] border-[color:var(--emphasis)] cursor-pointer" onClick={() => setRoomType("diplomatic")}>
+              DIPLOMATIC
             </li>
           )}
         </menu>

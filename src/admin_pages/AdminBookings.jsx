@@ -54,7 +54,7 @@ export default function AdminBookingsPage() {
       const baseUrl = apiUrl.endsWith('/') ? apiUrl.slice(0, -1) : apiUrl;
       console.log('AdminBookings: Fetching bookings from:', baseUrl);
       const response = await axios.post(`${baseUrl}/api/bookings`, {
-        room_type_id: [34, 35, 36, 37]
+        room_type_id: [1, 2]
       }, {
         headers: {
           'Content-Type': 'application/json',
