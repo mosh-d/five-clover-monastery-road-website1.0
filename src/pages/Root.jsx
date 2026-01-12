@@ -6,7 +6,7 @@ import MainNavBar from "../components/shared/MainNavBar";
 import axios from "axios";
 import { generateHotelSchema } from "../utils/seoUtils";
 import SEO from "../components/seo/SEO";
-import SafeHelmet from '../components/seo/SafeHelmet';
+import SafeHelmet from "../components/seo/SafeHelmet";
 
 const API_BASE_URL = "https://five-clover-shared-backend.onrender.com";
 
@@ -150,11 +150,16 @@ export default function RootLayout() {
     }
   };
 
-  // Fetch room data on component mount
   useEffect(() => {
-    fetchAvailableRooms(checkInDate, checkOutDate);
-  }, []);
-
+    if (checkInDate && checkOutDate) {
+      fetchAvailableRooms(checkInDate, checkOutDate);
+      const interval = setInterval(
+        () => fetchAvailableRooms(checkInDate, checkOutDate),
+        60000
+      );
+      return () => clearInterval(interval);
+    }
+  }, [checkInDate, checkOutDate, branchId]);
   // Update total payment when relevant state changes
   useEffect(() => {
     if (roomType && Object.keys(roomPrices).length > 0) {
@@ -209,7 +214,8 @@ export default function RootLayout() {
 
     const pageMetadata = {
       "/": {
-        title: "Five Clover Hotel Monastery Road | Luxury Accommodation in Lagos",
+        title:
+          "Five Clover Hotel Monastery Road | Luxury Accommodation in Lagos",
         description:
           "Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.",
       },
@@ -263,11 +269,13 @@ export default function RootLayout() {
             name: "Five Clover Hotel Monastery Road",
             description:
               "Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.",
-            image: "https://fiveclovermonastery.fivecloverhotels.com/five%20clover%20logo.webp",
+            image:
+              "https://fiveclovermonastery.fivecloverhotels.com/five%20clover%20logo.webp",
             url: "https://fiveclovermonastery.fivecloverhotels.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "10, Monastery Road, by Novare Mall/ShopRite, Sangotedo, Lagos",
+              streetAddress:
+                "10, Monastery Road, by Novare Mall/ShopRite, Sangotedo, Lagos",
               addressLocality: "Monastery Road",
               addressRegion: "Lagos",
               postalCode: "100211",
