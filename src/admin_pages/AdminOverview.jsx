@@ -15,6 +15,7 @@ const MAINTENANCE_MODE = false; // ← Change this to true/false
 // ========================================
 
 const ROOM_TYPE_MAP = {
+  standard: 46,
   deluxe: 1,
   diplomatic: 2,
 };
@@ -145,6 +146,18 @@ export default function AdminOverviewPage() {
           </h1>
         </div>
         <menu className="flex gap-[4rem] text-xl text-[color:var(--emphasis)]">
+          {roomType === "standard" ? (
+            <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
+              STANDARD
+            </li>
+          ) : (
+            <li
+              className="border-b-[1px] border-[color:var(--emphasis)] cursor-pointer"
+              onClick={() => setRoomType("standard")}
+            >
+              STANDARD
+            </li>
+          )}
           {roomType === "deluxe" ? (
             <li className="bg-[color:var(--emphasis)] text-[color:var(--white)] px-2 py-1 cursor-pointer">
               DELUXE
