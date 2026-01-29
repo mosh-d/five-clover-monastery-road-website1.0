@@ -1,55 +1,61 @@
-import axios from 'axios';
+import axios from "axios";
 
-const PRODUCTION_URL = 'https://five-clover-shared-backend.onrender.com';
-const LOCAL_URL = 'http://localhost:3000';
+const PRODUCTION_URL = "https://five-clover-shared-backend.onrender.com";
+const LOCAL_URL = "http://localhost:3000";
+
+// Determine API base URL based on environment
 let API_BASE_URL = PRODUCTION_URL;
 
-// Try to connect to local server first, fall back to production
-const testLocalConnection = async () => {
+const initializeApiUrl = async () => {
+  // Skip localhost test in production builds
+  if (import.meta.env.PROD) {
+    console.log("📦 Booking API: Production build - using production server");
+    API_BASE_URL = PRODUCTION_URL;
+    return;
+  }
+
+  // Only test localhost connection in development
   try {
-    // Try to connect to the root endpoint
-    const response = await axios.get(LOCAL_URL, { 
+    const response = await axios.get(LOCAL_URL, {
       timeout: 1000,
-      // Don't throw on non-2xx status codes
-      validateStatus: () => true 
+      validateStatus: () => true,
     });
-    // If we get any response, the server is up
     if (response.status) {
-      console.log('✅ Booking API: Connected to local development server');
-      return LOCAL_URL;
+      console.log("✅ Booking API: Connected to local development server");
+      API_BASE_URL = LOCAL_URL;
+      return;
     }
   } catch (error) {
-    console.log('⚠️ Booking API: Local server not available, falling back to production');
+    console.log("⚠️ Booking API: Local server not available, using production");
   }
-  return PRODUCTION_URL;
+  API_BASE_URL = PRODUCTION_URL;
 };
 
 // Initialize the base URL
-(async () => {
-  API_BASE_URL = await testLocalConnection();
-  console.log(`Booking API: Using API base URL: ${API_BASE_URL}`);
-})();
+initializeApiUrl();
 
 export const createReservation = async (reservationData) => {
   try {
-    console.log('Sending reservation data to:', API_BASE_URL);
-    console.log('Payload:', JSON.stringify(reservationData, null, 2));
+    console.log("Sending reservation data to:", API_BASE_URL);
+    console.log("Payload:", JSON.stringify(reservationData, null, 2));
     // Ensure API_BASE_URL doesn't end with a slash to prevent double slashes
-    const baseUrl = API_BASE_URL.endsWith('/') ? API_BASE_URL.slice(0, -1) : API_BASE_URL;
+    const baseUrl = API_BASE_URL.endsWith("/")
+      ? API_BASE_URL.slice(0, -1)
+      : API_BASE_URL;
     const response = await axios.post(
       `${baseUrl}/api/reservations`,
       reservationData,
       {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        withCredentials: true
-      }
+        withCredentials: true,
+      },
     );
-    console.log('Reservation response:', response.data);
+    console.log("Reservation response:", response.data);
     return response.data;
   } catch (error) {
-    console.error('Error details:', {
+    console.error("Error details:", {
       message: error.message,
       response: error.response?.data,
       status: error.response?.status,
@@ -61,8 +67,8 @@ export const createReservation = async (reservationData) => {
 
 export const getRoomTypeId = (roomTypeName) => {
   const roomTypeMap = {
-    'Deluxe': 1,
-    'Diplomatic': 2
+    Deluxe: 1,
+    Diplomatic: 2,
   };
   return roomTypeMap[roomTypeName] || null;
 };
