@@ -91,7 +91,7 @@ export default function HeroSection() {
         }}
       >
         {/* Background Video */}
-        <video
+        {/* <video
           ref={videoRef}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             videoLoaded ? "opacity-100" : "opacity-0"
@@ -103,7 +103,7 @@ export default function HeroSection() {
           onLoadedData={() => setVideoLoaded(true)}
         >
           <source src={heroVideo} type="video/mp4" />
-        </video>
+        </video> */}
 
         {/* Dark overlay for video */}
         <div
