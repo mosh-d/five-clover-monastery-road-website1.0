@@ -29,7 +29,7 @@ import { LuBath } from "react-icons/lu";
 import { TbAirConditioning, TbFridge } from "react-icons/tb";
 
 //Room images
-import standardRoomImage from "../../assets/room-images/standard/standard.jpg";
+// import standardRoomImage from "../../assets/room-images/standard/standard.jpg";
 import standardRoomImage2 from "../../assets/room-images/standard/standard-2.jpg";
 import standardRoomImage3 from "../../assets/room-images/standard/standard-3.jpg";
 import deluxeRoomImage from "../../assets/room-images/deluxe/deluxe.jpg";
@@ -39,7 +39,7 @@ import deluxeRoomImage4 from "../../assets/room-images/deluxe/deluxe-4.jpg";
 import diplomaticRoomImage from "../../assets/room-images/diplomatic/diplomatic.jpg";
 import diplomaticRoomImage2 from "../../assets/room-images/diplomatic/diplomatic-2.jpg";
 import diplomaticRoomImage3 from "../../assets/room-images/diplomatic/diplomatic-3.jpg";
-import diplomaticRoomImage4 from "../../assets/room-images/diplomatic/diplomatic-4.jpg";
+// import diplomaticRoomImage4 from "../../assets/room-images/diplomatic/diplomatic-4.jpg";
 
 // Mobile room images
 import mobileStandardImage from "../../assets/mobile-room-images/standard/standard.jpg";
@@ -56,7 +56,7 @@ import mobileDiplomaticImage4 from "../../assets/mobile-room-images/diplomatic/d
 
 //standard room images
 const standardRoomImages = [
-  standardRoomImage,
+  // standardRoomImage,
   standardRoomImage2,
   standardRoomImage3,
 ];
@@ -74,7 +74,7 @@ const diplomaticRoomImages = [
   diplomaticRoomImage,
   diplomaticRoomImage2,
   diplomaticRoomImage3,
-  diplomaticRoomImage4,
+  // diplomaticRoomImage4,
 ];
 
 // Mobile standard room images
@@ -167,7 +167,7 @@ export default function AvailableRoomsSection() {
   };
 
   const desktopRoomTypeImages = {
-    Standard: standardRoomImage,
+    Standard: standardRoomImage2,
     Deluxe: deluxeRoomImage,
     Diplomatic: diplomaticRoomImage,
   };
@@ -235,124 +235,117 @@ export default function AvailableRoomsSection() {
   }, [branchId]);
 
   // WebSocket handler - refetch data when rooms are updated (with dual fetch for reliability)
-  const handleRoomsUpdated = useCallback((data) => {
-    console.log('🔄 [AvailableRoomsSection] WebSocket update received at:', new Date().toISOString());
-    console.log('📡 [AvailableRoomsSection] WebSocket data:', data);
-    
-    // Check if we have a manual update response with room count data
-    if (data.new_available !== undefined || data.requested_count !== undefined) {
-      const updatedCount = data.new_available || data.requested_count;
-      console.log(`🔄 [AvailableRoomsSection] Using manual update response: ${updatedCount}`);
-      
-      // If response includes room_type_id, update that specific room type
-      if (data.room_type_id) {
-        console.log(`🎯 [AvailableRoomsSection] Updating specific room type ${data.room_type_id} with count ${updatedCount}`);
-        setRoomTypes(prev => prev.map(room => {
-          if (room.room_type_id === data.room_type_id) {
-            return {
-              ...room,
-              total_rooms: updatedCount,
-              available_rooms: updatedCount
-            };
-          }
-          return room;
-        }));
-        console.log('✅ [AvailableRoomsSection] UI updated with manual update response for specific room type');
-      } else {
-        // If no room_type_id in response, fetch fresh data to ensure accuracy
-        console.log('🔄 [AvailableRoomsSection] No room_type_id in response, fetching fresh data for accuracy...');
-        fetchRoomData();
-        console.log('✅ [AvailableRoomsSection] Fresh data fetch triggered for manual update');
-      }
-    }
-    // If we only get branch_id, it's a basic notification - fetch to get actual data
-    else if (data.branch_id) {
-      console.log('🔄 [AvailableRoomsSection] Basic WebSocket notification, fetching updated data...');
-      // Immediate fetch to get the latest data
-      fetchRoomData();
-      console.log('🔄 [AvailableRoomsSection] Immediate fetch triggered for basic notification');
-    }
-    // Update UI immediately with WebSocket data if available
-    else if (data.room_types && Array.isArray(data.room_types)) {
-      console.log('🔄 [AvailableRoomsSection] Updating UI immediately with WebSocket data');
-      setRoomTypes(data.room_types);
-      console.log('✅ [AvailableRoomsSection] UI updated with WebSocket data');
-    }
-    else {
-      // Fallback: fetch fresh data for any other WebSocket message types
-      console.log('🔄 [AvailableRoomsSection] Unknown WebSocket message type, fetching fresh data...');
-      fetchRoomData();
-      console.log('✅ [AvailableRoomsSection] Fallback fetch triggered');
-    }
-    
-    // First fetch after 2 seconds (immediate response)
-    setTimeout(() => {
-      console.log('🔄 [AvailableRoomsSection] Starting first fetch...');
-      fetchRoomData();
-      console.log('🔄 [AvailableRoomsSection] First fetch triggered');
-    }, 2000);
-    
-    // Second verification fetch after 5 seconds (ensure consistency)
-    setTimeout(() => {
-      console.log('🔄 [AvailableRoomsSection] Starting verification fetch...');
-      fetchRoomData();
-      console.log('🔄 [AvailableRoomsSection] Verification fetch triggered');
-    }, 5000);
+  const handleRoomsUpdated = useCallback(
+    (data) => {
+      console.log(
+        "🔄 [AvailableRoomsSection] WebSocket update received at:",
+        new Date().toISOString(),
+      );
+      console.log("📡 [AvailableRoomsSection] WebSocket data:", data);
 
-    // Final safety fetch after 10 seconds (ensure consistency)
-    setTimeout(() => {
-      console.log('🔄 [AvailableRoomsSection] Starting safety fetch...');
-      fetchRoomData();
-      console.log('🔄 [AvailableRoomsSection] Safety fetch triggered');
-    }, 10000);
-  }, [fetchRoomData]);
+      // Check if we have a manual update response with room count data
+      if (
+        data.new_available !== undefined ||
+        data.requested_count !== undefined
+      ) {
+        const updatedCount = data.new_available || data.requested_count;
+        console.log(
+          `🔄 [AvailableRoomsSection] Using manual update response: ${updatedCount}`,
+        );
 
-  // WebSocket handler - refetch data when rooms are updated (with immediate fetch for basic notifications)
-  const handleRoomsUpdatedImmediate = useCallback((data) => {
-    console.log('🔄 [AvailableRoomsSection] WebSocket update received at:', new Date().toISOString());
-    console.log('📡 [AvailableRoomsSection] WebSocket data:', data);
-    
-    // Check if we have a manual update response with room count data
-    if (data.new_available !== undefined || data.requested_count !== undefined) {
-      const updatedCount = data.new_available || data.requested_count;
-      console.log(`🔄 [AvailableRoomsSection] Using manual update response: ${updatedCount}`);
-      
-      // Update specific room type that was changed
-      setRoomTypes(prev => prev.map(room => {
-        // Find the room that was updated (assume it's the one that matches the count)
-        if (room.room_type_id === 1) { // Budget room type ID for monastery-road
-          return {
-            ...room,
-            total_rooms: updatedCount,
-            available_rooms: updatedCount
-          };
+        // If response includes room_type_id, update that specific room type
+        if (data.room_type_id) {
+          console.log(
+            `🎯 [AvailableRoomsSection] Updating specific room type ${data.room_type_id} with count ${updatedCount}`,
+          );
+          setRoomTypes((prev) =>
+            prev.map((room) => {
+              if (room.room_type_id === data.room_type_id) {
+                return {
+                  ...room,
+                  total_rooms: updatedCount,
+                  available_rooms: updatedCount,
+                };
+              }
+              return room;
+            }),
+          );
+          console.log(
+            "✅ [AvailableRoomsSection] UI updated with manual update response for specific room type",
+          );
+        } else {
+          // If no room_type_id in response, fetch fresh data to ensure accuracy
+          console.log(
+            "🔄 [AvailableRoomsSection] No room_type_id in response, fetching fresh data for accuracy...",
+          );
+          fetchRoomData();
+          console.log(
+            "✅ [AvailableRoomsSection] Fresh data fetch triggered for manual update",
+          );
         }
-        return room;
-      }));
-      console.log('✅ [AvailableRoomsSection] UI updated with manual update response');
-    }
-    // If we only get branch_id, it's a basic notification - fetch to get actual data
-    else if (data.branch_id) {
-      console.log('🔄 [AvailableRoomsSection] Basic WebSocket notification, fetching updated data...');
-      // Immediate fetch to get the latest data
-      fetchRoomData();
-      console.log('🔄 [AvailableRoomsSection] Immediate fetch triggered for basic notification');
-    }
-    // Update UI immediately with WebSocket data if available
-    else if (data.room_types && Array.isArray(data.room_types)) {
-      console.log('🔄 [AvailableRoomsSection] Updating UI immediately with WebSocket data');
-      setRoomTypes(data.room_types);
-      console.log('✅ [AvailableRoomsSection] UI updated with WebSocket data');
-    }
-  }, [fetchRoomData]);
+      }
+      // If we only get branch_id, it's a basic notification - fetch to get actual data
+      else if (data.branch_id) {
+        console.log(
+          "🔄 [AvailableRoomsSection] Basic WebSocket notification, fetching updated data...",
+        );
+        // Immediate fetch to get the latest data
+        fetchRoomData();
+        console.log(
+          "🔄 [AvailableRoomsSection] Immediate fetch triggered for basic notification",
+        );
+      }
+      // Update UI immediately with WebSocket data if available
+      else if (data.room_types && Array.isArray(data.room_types)) {
+        console.log(
+          "🔄 [AvailableRoomsSection] Updating UI immediately with WebSocket data",
+        );
+        setRoomTypes(data.room_types);
+        console.log(
+          "✅ [AvailableRoomsSection] UI updated with WebSocket data",
+        );
+      } else {
+        // Fallback: fetch fresh data for any other WebSocket message types
+        console.log(
+          "🔄 [AvailableRoomsSection] Unknown WebSocket message type, fetching fresh data...",
+        );
+        fetchRoomData();
+        console.log("✅ [AvailableRoomsSection] Fallback fetch triggered");
+      }
+
+      // First fetch after 2 seconds (immediate response)
+      setTimeout(() => {
+        console.log("🔄 [AvailableRoomsSection] Starting first fetch...");
+        fetchRoomData();
+        console.log("🔄 [AvailableRoomsSection] First fetch triggered");
+      }, 2000);
+
+      // Second verification fetch after 5 seconds (ensure consistency)
+      setTimeout(() => {
+        console.log(
+          "🔄 [AvailableRoomsSection] Starting verification fetch...",
+        );
+        fetchRoomData();
+        console.log("🔄 [AvailableRoomsSection] Verification fetch triggered");
+      }, 5000);
+
+      // Final safety fetch after 10 seconds (ensure consistency)
+      setTimeout(() => {
+        console.log("🔄 [AvailableRoomsSection] Starting safety fetch...");
+        fetchRoomData();
+        console.log("🔄 [AvailableRoomsSection] Safety fetch triggered");
+      }, 10000);
+    },
+    [fetchRoomData],
+  );
 
   // Subscribe to WebSocket updates
   const { isConnected, subscribe } = useWebSocketContext();
-  
+
   useEffect(() => {
-    const unsubscribe = subscribe(handleRoomsUpdatedImmediate);
+    const unsubscribe = subscribe(handleRoomsUpdated);
     return unsubscribe;
-  }, [handleRoomsUpdatedImmediate, subscribe]);
+  }, [handleRoomsUpdated, subscribe]);
 
   // Initial fetch only
   useEffect(() => {

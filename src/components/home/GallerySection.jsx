@@ -10,7 +10,7 @@ import Gallery5 from "../../assets/gallery/gallery-5.jpg";
 import Gallery6 from "../../assets/gallery/gallery-6.jpg";
 import Gallery7 from "../../assets/gallery/gallery-7.jpg";
 import Gallery8 from "../../assets/gallery/gallery-8.jpg";
-import Gallery9 from "../../assets/gallery/gallery-9.jpg";
+// import Gallery9 from "../../assets/gallery/gallery-9.jpg";
 import Gallery10 from "../../assets/gallery/gallery-10.jpg";
 import Gallery11 from "../../assets/gallery/gallery-11.jpg";
 import Gallery12 from "../../assets/gallery/gallery-12.jpg";
@@ -65,7 +65,7 @@ export default function GallerySection() {
     { src: Gallery6, alt: "Gallery 6" },
     { src: Gallery7, alt: "Gallery 7" },
     { src: Gallery8, alt: "Gallery 8" },
-    { src: Gallery9, alt: "Gallery 9" },
+    // { src: Gallery9, alt: "Gallery 9" },
     { src: Gallery10, alt: "Gallery 10" },
     { src: Gallery11, alt: "Gallery 11" },
     { src: Gallery12, alt: "Gallery 12" },
