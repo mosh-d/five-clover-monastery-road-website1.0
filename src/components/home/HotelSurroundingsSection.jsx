@@ -27,8 +27,8 @@ const TOP_ATTRACTIONS = [
     distance: "12 km",
   },
   {
-    title: "Skymall Cinema",
-    distance: "2 km",
+    title: "Novare Lekki Mall",
+    distance: "8 km",
   },
 ];
 
@@ -46,7 +46,7 @@ const SUPERMARKETS = [
     distance: "2 km",
   },
   {
-    title: "Ebeano Supermarket (Chevron)",
+    title: "Ebeano Supermarket - Chevron",
     distance: "10 km",
   },
 ];
@@ -57,12 +57,12 @@ const TRANSPORTATION = [
     distance: "45 km",
   },
   {
-    title: "GIG Motors (Ajah Terminal)",
+    title: "Ajah Bus Terminal",
     distance: "5 km",
   },
   {
-    title: "Peace Mass Transit (Ajah)",
-    distance: "5 km",
+    title: "Lekki-Epe Expressway",
+    distance: "3 km",
   },
 ];
 
@@ -76,12 +76,8 @@ const BEACHES = [
     distance: "6 km",
   },
   {
-    title: "Barracuda Beach",
-    distance: "6 km",
-  },
-  {
-    title: "Eleko Beach",
-    distance: "15 km",
+    title: "Elegushi Private Beach",
+    distance: "12 km",
   },
 ];
 
