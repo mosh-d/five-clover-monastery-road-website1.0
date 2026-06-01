@@ -29,9 +29,11 @@ import { LuBath } from "react-icons/lu";
 import { TbAirConditioning, TbFridge } from "react-icons/tb";
 
 //Room images
-// import standardRoomImage from "../../assets/room-images/standard/standard.jpg";
+import standardRoomImage from "../../assets/room-images/standard/standard.jpg";
 import standardRoomImage2 from "../../assets/room-images/standard/standard-2.jpg";
 import standardRoomImage3 from "../../assets/room-images/standard/standard-3.jpg";
+import standardRoomImage4 from "../../assets/room-images/standard/standard-4.jpg";
+import standardRoomImage5 from "../../assets/room-images/standard/standard-5.jpg";
 import deluxeRoomImage from "../../assets/room-images/deluxe/deluxe.jpg";
 import deluxeRoomImage2 from "../../assets/room-images/deluxe/deluxe-2.jpg";
 import deluxeRoomImage3 from "../../assets/room-images/deluxe/deluxe-3.jpg";
@@ -56,9 +58,11 @@ import mobileDiplomaticImage4 from "../../assets/mobile-room-images/diplomatic/d
 
 //standard room images
 const standardRoomImages = [
-  // standardRoomImage,
+  standardRoomImage,
   standardRoomImage2,
   standardRoomImage3,
+  standardRoomImage4,
+  standardRoomImage5,
 ];
 
 //deluxe room images
@@ -167,7 +171,7 @@ export default function AvailableRoomsSection() {
   };
 
   const desktopRoomTypeImages = {
-    Standard: standardRoomImage2,
+    Standard: standardRoomImage,
     Deluxe: deluxeRoomImage,
     Diplomatic: diplomaticRoomImage,
   };
