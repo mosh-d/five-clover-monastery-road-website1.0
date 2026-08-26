@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 
 const SEO = ({
   title = 'Five Clover Hotel Monastery Road | Luxury Accommodation in Lagos',
-  description = 'Experience luxury and comfort at Five Clover Hotel Monastery Road. Book your stay at our premium hotel at Monastery Road, Sangotedo, Lagos, Nigeria.',
+  description = 'Five Clover Hotel Monastery Road offers upscale comfort in Sangotedo, Lagos, close to the Lekki-Epe Expressway.',
   keywords = 'hotel, lagos, accommodation, five clover, monastery road, luxury hotel, nigeria, business hotel, vacation, sangotedo',
   image = 'https://monastery.fivecloverhotels.com/five%20clover%20logo.webp',
   url = typeof window !== 'undefined' ? window.location.href : 'https://monastery.fivecloverhotels.com',

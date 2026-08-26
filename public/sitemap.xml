@@ -3,23 +3,37 @@
   
     <url>
       <loc>https://monastery.fivecloverhotels.com/</loc>
-      <lastmod>2026-06-09T12:13:48.166Z</lastmod>
+      <lastmod>2026-08-26T19:06:31.948Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
   
     <url>
       <loc>https://monastery.fivecloverhotels.com/about</loc>
-      <lastmod>2026-06-09T12:13:48.168Z</lastmod>
+      <lastmod>2026-08-26T19:06:31.951Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
       <loc>https://monastery.fivecloverhotels.com/contact</loc>
-      <lastmod>2026-06-09T12:13:48.168Z</lastmod>
+      <lastmod>2026-08-26T19:06:31.951Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>https://monastery.fivecloverhotels.com/privacy-policy</loc>
+      <lastmod>2026-08-26T19:06:31.951Z</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+    </url>
+  
+    <url>
+      <loc>https://monastery.fivecloverhotels.com/terms-of-service</loc>
+      <lastmod>2026-08-26T19:06:31.951Z</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
     </url>
   
 </urlset>
