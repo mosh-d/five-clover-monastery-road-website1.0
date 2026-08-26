@@ -5,8 +5,8 @@ export const generateHotelSchema = (hotelData = {}) => {
     name: "Five Clover Hotel Monastery Road",
     description:
       "Luxury hotel accommodation at Monastery Road, Sangotedo, Lagos. Experience comfort and excellent service at Five Clover Hotel.",
-    url: "https://fiveclovermonastery.fivecloverhotels.com",
-    logo: "https://fiveclovermonastery.fivecloverhotels.com/five%20clover%20logo.webp",
+    url: "https://monastery.fivecloverhotels.com",
+    logo: "https://monastery.fivecloverhotels.com/five%20clover%20logo.webp",
     priceRange: "$$",
     starRating: {
       "@type": "Rating",
@@ -61,13 +61,13 @@ export const generateBreadcrumbSchema = (items = []) => {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://fiveclovermonastery.fivecloverhotels.com",
+      item: "https://monastery.fivecloverhotels.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Rooms",
-      item: "https://fiveclovermonastery.fivecloverhotels.com/rooms",
+      item: "https://monastery.fivecloverhotels.com/rooms",
     },
   ];
 
