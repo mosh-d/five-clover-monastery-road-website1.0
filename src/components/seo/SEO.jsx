@@ -10,7 +10,6 @@ const SEO = ({
   noindex = false,
 }) => {
   const siteName = 'Five Clover Hotel Monastery Road';
-  const siteUrl = 'https://monastery.fivecloverhotels.com';
   const twitterHandle = '@fivecloverhotel';
 
   return (
